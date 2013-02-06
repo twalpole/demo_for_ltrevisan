@@ -1,0 +1,19 @@
+<%= semantic_form_for(@question_response) do |f| %>
+  <% if @question_response.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@question_response.errors.count, "error") %> prohibited this question_response from being saved:</h2>
+
+      <ul>
+      <% @question_response.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.inputs do %>
+    <%= debugger; f.input :survey_options, :as => :check_boxes, collection: f.object.survey_question.survey_options %>
+  <% end %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
