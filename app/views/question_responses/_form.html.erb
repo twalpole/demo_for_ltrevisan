@@ -11,7 +11,7 @@
     </div>
   <% end %>
   <%= f.inputs do %>
-    <%= debugger; f.input :survey_options, :as => :check_boxes, collection: f.object.survey_question.survey_options %>
+    <%= f.input :survey_options, :as => :check_boxes, collection: f.object.survey_question.survey_options %>
   <% end %>
   <div class="actions">
     <%= f.submit %>
